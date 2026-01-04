@@ -1,157 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Terms of Service - NW3DPrinting, LLC</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f7f7f7;
-      color: #222;
-    }
-    header {
-      background: #111;
-      color: #fff;
-      padding: 1.5rem;
-      text-align: center;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 0.5rem;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      background: #fff;
-      padding: 2rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      border-radius: 8px;
-    }
-    h1, h2 {
-      margin-top: 0;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #666;
-      margin: 2rem 0;
-    }
-  </style>
+<meta charset="UTF-8" />
+<title>Terms of Service – NW3DPrinting, LLC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    margin: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+    background: #ffffff;
+    color: #f5f5f5;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    backdrop-filter: blur(6px);
+    background: rgba(30,30,30,0.92);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0.6rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  header img.logo {
+    height: 60px;
+  }
+
+  nav {
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  nav a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 300;
+  }
+
+  .page-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 6rem 1.5rem 5rem;
+    background-color: #1b1b1b;
+    background-image:
+      repeating-linear-gradient(
+        135deg,
+        rgba(255,255,255,0.03) 0px,
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px,
+        transparent 8px
+      ),
+      radial-gradient(circle at 12% 25%, rgba(255,59,59,0.22) 0, transparent 55%),
+      radial-gradient(circle at 85% 70%, rgba(255,59,59,0.18) 0, transparent 52%);
+    box-sizing: border-box;
+  }
+
+  .page-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .page-box {
+    background: rgba(0,0,0,0.35);
+    border-radius: 18px;
+    padding: 2.5rem 2.2rem;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+    color: #ffffff;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    margin-top: 1.9rem;
+    margin-bottom: 0.6rem;
+    font-weight: 400;
+    color: #ffffff;
+  }
+
+  p, li {
+    font-size: 0.98rem;
+    line-height: 1.65;
+    color: #e3e3e3;
+  }
+
+  ul {
+    margin: 0.4rem 0 0.4rem 1.3rem;
+    padding: 0;
+  }
+
+  strong {
+    color: #ffffff;
+  }
+
+  a {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+  footer {
+    background: rgba(30,30,30,0.92);
+    color: #e5e5e5;
+    padding: 3rem 1.5rem 2.5rem;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .footer-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+  }
+
+  .footer-links a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: block;
+    margin: 0.25rem 0;
+  }
+
+  .footer-small a {
+    color: #e5e5e5;
+    text-decoration: none;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #bfbfbf;
+  }
+</style>
 </head>
+
 <body>
-  <header>
-    <h1>NW3DPrinting, LLC</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-    </nav>
-  </header>
 
-  <main>
-    <h1>Terms of Service</h1>
-    <p><strong>Last Updated:</strong> <!-- add today’s date --> </p>
+<header>
+  <div class="header-inner">
+    <div class="header-left">
+      <img src="NW3D_logo.png" alt="NW3D Logo" class="logo" />
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="mailto:nick@nw3d.com">Contact&nbsp;Us</a>
+      </nav>
+    </div>
+  </div>
+</header>
 
-    <p>
-      These Terms of Service ("Terms") govern your use of this website operated by
-      NW3DPrinting, LLC ("we," "us," or "our"). By accessing or using the website,
-      you agree to be bound by these Terms.
-    </p>
+<section class="page-section">
+  <div class="page-inner">
+    <div class="page-box">
+      <h1>Terms of Service</h1>
+      <p><strong>Effective date:</strong> January 4, 2026</p>
+      <p>
+        These Terms of Service ("Terms") govern your use of the NW3DPrinting, LLC ("NW3DPrinting,"
+        "we," "us," or "our") website located at <strong>nw3d.com</strong> and any related pages
+        (collectively, the "Site"). By accessing or using the Site, you agree to be bound by these
+        Terms.
+      </p>
 
-    <h2>1. Use of the Website</h2>
-    <p>
-      You agree to use this website only for lawful purposes and in accordance with these
-      Terms. You may not:
-    </p>
-    <ul>
-      <li>Attempt to interfere with the operation or security of the website.</li>
-      <li>Use the website to engage in fraudulent, harmful, or illegal activity.</li>
-      <li>Copy, redistribute, or modify site content without our permission.</li>
-    </ul>
+      <h2>1. About NW3DPrinting, LLC</h2>
+      <p>
+        NW3DPrinting, LLC is a 3D printing company specializing in custom and made-to-order parts.
+        This Site is primarily informational and may link out to third-party marketplaces such as
+        Etsy and TikTok Shop where purchases are processed.
+      </p>
 
-    <h2>2. No Warranties</h2>
-    <p>
-      This website and its content are provided on an "as is" and "as available" basis.
-      We make no warranties, express or implied, regarding the accuracy, completeness,
-      reliability, or availability of the website or its content, or that the website
-      will be uninterrupted or error-free.
-    </p>
+      <h2>2. Use of the Site</h2>
+      <p>Subject to these Terms, you may use the Site for lawful purposes, including:</p>
+      <ul>
+        <li>Learning about our products and services.</li>
+        <li>Following links to third-party marketplaces where our products are sold.</li>
+        <li>Contacting us via email for questions or custom order requests.</li>
+      </ul>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Use the Site for any illegal, harmful, or abusive activity.</li>
+        <li>Attempt to gain unauthorized access to the Site or its underlying systems.</li>
+        <li>Interfere with or disrupt the operation of the Site or its infrastructure.</li>
+      </ul>
 
-    <h2>3. Limitation of Liability</h2>
-    <p>
-      To the fullest extent permitted by law, NW3DPrinting, LLC will not be liable for any
-      indirect, incidental, consequential, or punitive damages, or any loss of data,
-      revenue, or profits, arising out of or in connection with your use of or inability
-      to use the website.
-    </p>
+      <h2>3. No Direct Sales on This Site</h2>
+      <p>
+        At this time, we do not process payments directly through this Site. Purchases of our products
+        are made through third-party platforms such as <strong>Etsy</strong> and
+        <strong>TikTok Shop</strong>. Any transactions, payment processing, refunds, or disputes that
+        occur on those platforms are governed by their respective terms and policies.
+      </p>
 
-    <h2>4. Product &amp; Order Information</h2>
-    <p>
-      If products or services are referenced on this website, all purchases are subject to
-      separate terms and conditions provided at the point of sale, including through
-      platforms such as TikTok Shop or other e-commerce services. Product availability,
-      descriptions, and pricing may change without notice.
-    </p>
+      <h2>4. Third-Party Links</h2>
+      <p>
+        The Site may contain links to third-party websites or services that we do not own or control,
+        including Etsy and TikTok Shop. We provide these links for convenience only and are not
+        responsible for the content, terms, or practices of any third-party sites. Your use of those
+        sites is at your own risk and subject to their separate terms and conditions.
+      </p>
 
-    <h2>5. Intellectual Property</h2>
-    <p>
-      All content on this site, including text, logos, and graphics, is owned by or licensed
-      to NW3DPrinting, LLC and is protected by applicable intellectual property laws. You may
-      not reproduce, distribute, or create derivative works from any content on this site
-      without our prior written consent.
-    </p>
+      <h2>5. Intellectual Property</h2>
+      <p>
+        Unless otherwise noted, all content on the Site, including text, graphics, logos, images,
+        and layout, is owned by NW3DPrinting, LLC or used with permission and is protected by
+        applicable intellectual property laws.
+      </p>
+      <p>You may not:</p>
+      <ul>
+        <li>Copy, reproduce, or distribute Site content for commercial purposes without our prior written consent.</li>
+        <li>Use our logos or branding in a way that suggests sponsorship or endorsement without permission.</li>
+      </ul>
 
-    <h2>6. Third-Party Services</h2>
-    <p>
-      Our website may link to or integrate with third-party platforms (such as e-commerce
-      or social platforms). We are not responsible for third-party content, policies, or
-      actions. Your use of third-party services is governed by their own terms and
-      conditions.
-    </p>
+      <h2>6. Product Information & Availability</h2>
+      <p>
+        Any descriptions of products on this Site are provided for informational purposes. Product
+        availability, pricing, materials, and fulfillment times are subject to change and are
+        ultimately governed by the listings on the third-party marketplaces where the products are
+        sold.
+      </p>
 
-    <h2>7. Termination</h2>
-    <p>
-      We reserve the right to suspend or terminate access to the website at any time, without
-      notice, for conduct that we believe violates these Terms or is otherwise harmful.
-    </p>
+      <h2>7. Disclaimers</h2>
+      <p>
+        The Site is provided on an "as is" and "as available" basis, without warranties of any kind,
+        whether express or implied. To the fullest extent permitted by law, we disclaim all warranties,
+        including but not limited to implied warranties of merchantability, fitness for a particular
+        purpose, and non-infringement.
+      </p>
+      <p>
+        We do not guarantee that the Site will be uninterrupted, error-free, secure, or free of
+        viruses or other harmful components.
+      </p>
 
-    <h2>8. Changes to These Terms</h2>
-    <p>
-      We may update these Terms from time to time. Updated Terms will be posted on this page
-      with an updated "Last Updated" date. Your continued use of the website after any changes
-      indicates your acceptance of the revised Terms.
-    </p>
+      <h2>8. Limitation of Liability</h2>
+      <p>
+        To the maximum extent permitted by law, NW3DPrinting, LLC and its owners, employees,
+        and affiliates shall not be liable for any indirect, incidental, special, consequential,
+        or punitive damages arising out of or related to your use of (or inability to use) the Site,
+        even if we have been advised of the possibility of such damages.
+      </p>
+      <p>
+        Our total liability for any claim arising out of or relating to the Site shall not exceed
+        the amount, if any, you paid to us directly in connection with your use of the Site
+        (which is typically $0, as purchases occur via third-party platforms).
+      </p>
 
-    <h2>9. Governing Law</h2>
-    <p>
-      These Terms are governed by the laws of the State of Connecticut, without regard to
-      its conflict of law principles.
-    </p>
+      <h2>9. Indemnification</h2>
+      <p>
+        You agree to indemnify and hold NW3DPrinting, LLC and its owners, employees, and affiliates
+        harmless from and against any claims, liabilities, damages, losses, and expenses (including
+        reasonable attorneys' fees) arising out of or in any way connected with your use of the Site
+        or violation of these Terms.
+      </p>
 
-    <h2>10. Contact Us</h2>
-    <p>
-      If you have questions about these Terms, you may contact us at:
-    </p>
-    <p>
-      <strong>NW3DPrinting, LLC</strong><br />
-      Email: <a href="mailto:contact@nw3d.com">contact@nw3d.com</a>
-    </p>
-  </main>
+      <h2>10. Changes to the Site and These Terms</h2>
+      <p>
+        We may update, modify, or discontinue any part of the Site at any time without notice.
+        We may also update these Terms from time to time. When we do, we will revise the
+        "Effective date" at the top of this page. Your continued use of the Site after changes have
+        been posted constitutes your acceptance of the updated Terms.
+      </p>
 
-  <footer>
-    &copy; <span id="year"></span> NW3DPrinting, LLC. All rights reserved.
-  </footer>
+      <h2>11. Governing Law</h2>
+      <p>
+        These Terms are governed by and construed in accordance with the laws of the State of
+        Connecticut, without regard to its conflict of law principles. Any disputes arising out of
+        or related to these Terms or your use of the Site shall be brought exclusively in the state
+        or federal courts located in Connecticut, and you consent to the jurisdiction of such courts.
+      </p>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+      <h2>12. Contact Us</h2>
+      <p>
+        If you have any questions about these Terms, you can contact us at:
+      </p>
+      <p>
+        <strong>NW3DPrinting, LLC</strong><br />
+        Email: <a href="mailto:nick@nw3d.com">nick@nw3d.com</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-title">NW3DPrinting, LLC</div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+
+    <div style="text-align:right;">
+      <div class="footer-title">Contact</div>
+      <div class="footer-small">
+        <a href="mailto:nick@nw3d.com">nick@nw3d.com</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © <script>document.write(new Date().getFullYear())</script> NW3DPrinting, LLC — All Rights Reserved
+  </div>
+</footer>
+
 </body>
 </html>
