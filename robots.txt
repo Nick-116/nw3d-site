@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nw3d.com/sitemap.xml
