@@ -5,125 +5,490 @@
 <title>NW3DPrinting, LLC</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
-    background: radial-gradient(circle at top, #2a2a2a, #111);
-    color: #f3f3f3;
-    min-height: 100vh;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+    background: #ffffff;
+    color: #222;
   }
 
-  /* --- Glass Header Bar --- */
   header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    backdrop-filter: blur(6px);
+    background: rgba(30,30,30,0.92);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0.6rem 1.25rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.75rem 1.5rem;
-    position: sticky;
-    top: 0;
-    backdrop-filter: blur(10px);
-    background: rgba(0, 0, 0, 0.45);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
   }
 
   header img.logo {
-    height: 38px;
+    height: 60px;
+  }
+
+  nav {
+    display: flex;
+    gap: 1.25rem;
   }
 
   nav a {
-    color: #fff;
-    margin-left: 1rem;
+    color: #f2f2f2;
     text-decoration: none;
     font-size: 0.95rem;
-    padding: 0.4rem 0.6rem;
-    border-radius: 8px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.08);
-    backdrop-filter: blur(6px);
+    font-weight: 300;
   }
 
-  nav a:hover {
-    background: rgba(255,255,255,0.12);
+  .banner-wrapper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3 / 1;
   }
 
-  /* --- Main glass card --- */
-  main {
-    max-width: 900px;
-    margin: 3rem auto;
-    padding: 2.5rem;
-    background: rgba(255,255,255,0.08);
-    border-radius: 18px;
-    backdrop-filter: blur(14px);
-    box-shadow: 0 0 30px rgba(0,0,0,0.35);
-    border: 1px solid rgba(255,255,255,0.12);
+  .banner-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
   }
 
-  h1, h2 {
-    margin-top: 0;
+  .banner-slide.active {
+    opacity: 1;
   }
 
-  .tag {
-    display: inline-block;
-    padding: 0.35rem 0.6rem;
-    font-size: 0.75rem;
+  .feature-section {
+    position: relative;
+    width: 100%;
+    color: #f5f5f5;
+    padding: 10rem 1.5rem 40rem;
+    overflow: hidden;
+    background-color: #1b1b1b;
+
+    background-image:
+      repeating-linear-gradient(
+        135deg,
+        rgba(255,255,255,0.03) 0px,
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px,
+        transparent 8px
+      ),
+      radial-gradient(circle at 12% 25%, rgba(255,59,59,0.22) 0, transparent 55%),
+      radial-gradient(circle at 85% 70%, rgba(255,59,59,0.18) 0, transparent 52%);
+  }
+
+  .feature-inner {
+    max-width: 1050px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .feature-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .feature-text-block {
+    flex: 1 1 430px;
+    margin-left: -12px;
+  }
+
+  .feature-image-block {
+    flex: 1 1 350px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .feature-image-block img {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 14px;
+    box-shadow: 0 0 35px rgba(0,0,0,0.35);
+    object-fit: cover;
+  }
+
+  .feature-heading {
+    font-size: 2.3rem;
+    font-weight: 400;
+    margin-bottom: 0.9rem;
+  }
+
+  .feature-text {
+    font-size: 1.05rem;
+    color: #d7d7d7;
+    line-height: 1.6;
+  }
+
+  .store-buttons {
+    margin-top: 1.8rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .store-button {
+    padding: 0.7rem 1.4rem 0.7rem 1.1rem;
     border-radius: 999px;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.08);
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    backdrop-filter: blur(6px);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
   }
 
-  footer {
-    text-align: center;
-    padding: 1.5rem;
-    color: #aaa;
+  .store-button img {
+    height: 20px;
+    width: auto;
+  }
+
+  .feature-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+  }
+
+  .overlay-content {
+    max-width: 1050px;
+    width: 100%;
+    padding: 1.8rem 1.5rem;
+  }
+
+  .overlay-content h3 {
+    margin: -0.4rem 0 1.3rem 0;
+    font-size: 2.3rem;
+    font-weight: 400;
+  }
+
+  .reviews {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+  }
+
+  .review-card {
+    flex: 1 1 260px;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: rgba(0,0,0,0.38);
+    border-radius: 14px;
+    padding: 1.3rem 1.3rem;
+    min-height: 220px;
+  }
+
+  .review-photo-img {
+    width: 160px;
+    height: 200px;
+    border-radius: 14px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .review-text {
+    font-size: 1rem;
+    line-height: 1.55;
+    color: #f5f5f5;
+  }
+
+  .review-name {
+    display: block;
+    margin-top: 0.35rem;
     font-size: 0.8rem;
+    color: #d0d0d0;
+    opacity: 0.9;
   }
 
+  /* USA + Lifetime section */
+  .trust-section {
+    position: relative;
+    width: 100%;
+    color: #f5f5f5;
+    padding: 6rem 1.5rem 7rem;
+    overflow: hidden;
+    background-color: #1b1b1b;
+    background-image:
+      repeating-linear-gradient(
+        135deg,
+        rgba(255,255,255,0.03) 0px,
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px,
+        transparent 8px
+      ),
+      radial-gradient(circle at 12% 25%, rgba(255,59,59,0.22) 0, transparent 55%),
+      radial-gradient(circle at 85% 70%, rgba(255,59,59,0.18) 0, transparent 52%);
+  }
+
+  .trust-inner {
+    max-width: 1050px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .trust-box {
+    background: rgba(0,0,0,0.2);
+    border-radius: 18px;
+    padding: 2.3rem 2.1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.2rem;
+    align-items: center;
+  }
+
+  .usa-logo-box {
+    flex: 0 1 260px;
+    text-align: center;
+  }
+
+  .usa-logo-box img {
+    max-width: 240px;
+    width: 100%;
+    border-radius: 14px;
+  }
+
+  .trust-text {
+    flex: 1 1 420px;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .trust-heading {
+    font-size: 2.3rem;
+    font-weight: 400;
+    margin-bottom: 1.2rem;
+  }
+
+  .big-line {
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+
+  /* Footer */
+  footer {
+    background: rgba(30,30,30,0.92);
+    color: #e5e5e5;
+    padding: 3rem 1.5rem 2.5rem;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .footer-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+  }
+
+  .footer-links a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: block;
+    margin: 0.25rem 0;
+  }
+
+  .footer-small a {
+    color: #e5e5e5;
+    text-decoration: none;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #bfbfbf;
+  }
 </style>
 
 </head>
 <body>
 
 <header>
-  <img src="NW3D_logo.png" alt="NW3D Logo" class="logo" />
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
-  </nav>
+  <div class="header-inner">
+    <div class="header-left">
+      <img src="NW3D_logo.png" alt="NW3D Logo" class="logo" />
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="mailto:nick@nw3d.com">Contact&nbsp;Us</a>
+      </nav>
+    </div>
+  </div>
 </header>
 
-<main>
-  <span class="tag">NW3DPrinting, LLC</span>
-  <h1>Modern 3D Printing & Automation</h1>
+<div class="banner-wrapper">
+  <div class="banner-slide active" style="background-image:url('banner1.png');"></div>
+  <div class="banner-slide" style="background-image:url('banner2.png');"></div>
+  <div class="banner-slide" style="background-image:url('banner3.png');"></div>
+</div>
 
-  <p>
-    NW3DPrinting, LLC is a Connecticut-based 3D printing company specializing in
-    custom components, accessories, and production automation. We design,print,
-    and ship made-to-order parts using advanced desktop manufacturing technology.
-  </p>
+<section class="feature-section">
+  <div class="feature-inner">
 
-  <h2>Automation & TikTok Shop Integration</h2>
-  <p>
-    We develop internal software systems to automate our production workflow,
-    including order processing and job scheduling. These tools are for
-    NW3DPrinting, LLC operations only and are not offered for resale or public use.
-  </p>
+    <div class="feature-flex">
 
-  <h2>Contact</h2>
-  <p>
-    Email us anytime:<br>
-    <a style="color:#7bdcff" href="mailto:contact@nw3d.com">contact@nw3d.com</a>
-  </p>
+      <div class="feature-text-block">
+        <div class="feature-heading">Where to Find Our Products</div>
 
-</main>
+        <div class="feature-text">
+          Our products are sold on Etsy & TikTok Shop. If you would like a custom order, feel
+          free to reach out using the Contact Us button.<br><br>
+          All of our parts are made to order and produced in-house through our automated
+          3D printer farm. Each job is queued, scheduled, and monitored by our internal
+          automation systems to ensure consistency, repeatability, and fast turnaround times.
+        </div>
+
+        <div class="store-buttons">
+          <a class="store-button" href="https://www.etsy.com/shop/NW3DPrinting" target="_blank">
+            <img src="etsy.png" alt="Etsy"> Visit our Etsy Store
+          </a>
+
+          <a class="store-button" href="https://www.tiktok.com/shop/store/nw3dprinting/7495339217103259746" target="_blank">
+            <img src="tiktok.png" alt="TikTok"> Visit our TikTok Shop
+          </a>
+        </div>
+      </div>
+
+      <div class="feature-image-block">
+        <img src="Front1.jpg" alt="Shop Photo">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="feature-overlay">
+    <div class="overlay-content">
+      <h3>What Our Customers Are Saying</h3>
+
+      <div class="reviews">
+
+        <div class="review-card">
+          <img src="review1.jpg" class="review-photo-img" alt="Review 1">
+          <div class="review-text">
+            "Item was well-made and worked perfectly as described. I am purchasing a few more."
+            <span class="review-name">— Etsy Customer</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <img src="review2.jpg" class="review-photo-img" alt="Review 2">
+          <div class="review-text">
+            "Thank you so much! Good item for my Milwaukee levels!!"
+            <span class="review-name">— Etsy Customer</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <img src="review3.jpg" class="review-photo-img" alt="Review 3">
+          <div class="review-text">
+            "Well made separators. My blades look very organized."
+            <span class="review-name">— Etsy Customer</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust-section">
+  <div class="trust-inner">
+    <div class="trust-box">
+
+      <div class="usa-logo-box">
+        <img src="usa.png" alt="Made in USA">
+      </div>
+
+      <div class="trust-text">
+        <div class="trust-heading">Built to Last — Made in the USA</div>
+
+        <span class="big-line">🇺🇸 Designed & Manufactured in the USA</span>
+        All of our products are designed, printed, and quality checked in the United States
+        using our automated 3D printer farm, so we can control quality from start to finish.
+        <br><br>
+        <span class="big-line">♾️ Lifetime Warranty</span>
+        If a part ever fails under normal use, we’ll replace it. No flashy badges or fine print —
+        just a straightforward promise that we stand behind what we make.
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <footer>
-  &copy; <span id="year"></span> NW3DPrinting, LLC — All rights reserved.
+  <div class="footer-inner">
+
+    <!-- LEFT COLUMN -->
+    <div>
+      <div class="footer-title">NW3DPrinting, LLC</div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div style="text-align:right;">
+      <div class="footer-title">Contact</div>
+      <div class="footer-small">
+        <a href="mailto:nick@nw3d.com">nick@nw3d.com</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © <script>document.write(new Date().getFullYear())</script> NW3DPrinting, LLC — All Rights Reserved
+  </div>
 </footer>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+  const slides = document.querySelectorAll(".banner-slide");
+  let current = 0;
+  setInterval(() => {
+    slides[current].classList.remove("active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("active");
+  }, 5000);
 </script>
 
 </body>
