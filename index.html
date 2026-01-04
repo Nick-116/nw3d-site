@@ -1,94 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>NW3DPrinting, LLC</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="NW3DPrinting, LLC - Custom 3D printing and internal order automation tools." />
-  <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f7f7f7;
-      color: #222;
-    }
-    header {
-      background: #111;
-      color: #fff;
-      padding: 1.5rem;
-      text-align: center;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 0.5rem;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      background: #fff;
-      padding: 2rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      border-radius: 8px;
-    }
-    h1, h2 {
-      margin-top: 0;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #666;
-      margin: 2rem 0;
-    }
-  </style>
+<meta charset="UTF-8" />
+<title>NW3DPrinting, LLC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<style>
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+    background: radial-gradient(circle at top, #2a2a2a, #111);
+    color: #f3f3f3;
+    min-height: 100vh;
+  }
+
+  /* --- Glass Header Bar --- */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.45);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  header img.logo {
+    height: 38px;
+  }
+
+  nav a {
+    color: #fff;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(6px);
+  }
+
+  nav a:hover {
+    background: rgba(255,255,255,0.12);
+  }
+
+  /* --- Main glass card --- */
+  main {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background: rgba(255,255,255,0.08);
+    border-radius: 18px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 0 30px rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+
+  h1, h2 {
+    margin-top: 0;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 0.35rem 0.6rem;
+    font-size: 0.75rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: #aaa;
+    font-size: 0.8rem;
+  }
+
+</style>
+
 </head>
 <body>
-  <header>
-    <h1>NW3DPrinting, LLC</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-    </nav>
-  </header>
 
-  <main>
-    <h2>About NW3DPrinting, LLC</h2>
-    <p>
-      NW3DPrinting, LLC is a Connecticut-based 3D printing business specializing in custom parts
-      and accessories. We design, print, and ship products for customers using modern desktop
-      manufacturing tools.
-    </p>
+<header>
+  <img src="NW3D_logo.png" alt="NW3D Logo" class="logo" />
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </nav>
+</header>
 
-    <h2>TikTok Shop & Internal Tools</h2>
-    <p>
-      This website also supports our internal integrations, including automated order processing
-      and production workflows connected to TikTok Shop and other platforms. These tools are
-      used only to manage orders placed with NW3DPrinting, LLC and are not offered as a service
-      to other merchants.
-    </p>
+<main>
+  <span class="tag">NW3DPrinting, LLC</span>
+  <h1>Modern 3D Printing & Automation</h1>
 
-    <h2>Contact</h2>
-    <p>
-      If you have any questions about our products or this website, you can contact us at:
-    </p>
-    <p>
-      Email: <a href="mailto:contact@nw3d.com">contact@nw3d.com</a>
-      <!-- Change this email if you prefer another address -->
-    </p>
-  </main>
+  <p>
+    NW3DPrinting, LLC is a Connecticut-based 3D printing company specializing in
+    custom components, accessories, and production automation. We design,print,
+    and ship made-to-order parts using advanced desktop manufacturing technology.
+  </p>
 
-  <footer>
-    &copy; <span id="year"></span> NW3DPrinting, LLC. All rights reserved.
-  </footer>
+  <h2>Automation & TikTok Shop Integration</h2>
+  <p>
+    We develop internal software systems to automate our production workflow,
+    including order processing and job scheduling. These tools are for
+    NW3DPrinting, LLC operations only and are not offered for resale or public use.
+  </p>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <h2>Contact</h2>
+  <p>
+    Email us anytime:<br>
+    <a style="color:#7bdcff" href="mailto:contact@nw3d.com">contact@nw3d.com</a>
+  </p>
+
+</main>
+
+<footer>
+  &copy; <span id="year"></span> NW3DPrinting, LLC — All rights reserved.
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
